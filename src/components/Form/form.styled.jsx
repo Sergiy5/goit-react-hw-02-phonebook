@@ -25,7 +25,7 @@ export const Input = styled.input`
 export const BtnSubmit = styled.button`
     margin: 10px;
     font-size: 26px;
-    width: 150px;
+    width: 205px;
     height: 35px;
     background-color: #c6d6eb;
     border-radius: 7px;
