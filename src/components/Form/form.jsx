@@ -5,7 +5,6 @@ import { WraperForm, Input, BtnSubmit, Label } from './form.styled';
 class Form extends Component {
 
   state = {
-    filter: '',
     name: '',
     number: '',
     };
@@ -20,7 +19,11 @@ class Form extends Component {
       e.preventDefault()
       const id = nanoid(5)
       const {name, number } = this.state
-        this.props.onSubmit({id, name, number})
+      this.props.onSubmit({ id, name, number })
+      this.setState({
+    name: '',
+    number: '',
+    })
     }
 
   render() {
@@ -37,6 +40,7 @@ class Form extends Component {
             title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
             required
             onChange={this.handleChange}
+            value={this.state.name}
                 />
                 <Label htmlFor="numberInput" className="lableInputNumber">
             Number
@@ -48,6 +52,7 @@ class Form extends Component {
             title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
             required
             onChange={this.handleChange}
+            value={this.state.number}
           />
           <BtnSubmit type="submit" className="btnSubmit">
             Submit
