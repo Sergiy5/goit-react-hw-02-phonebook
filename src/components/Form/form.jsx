@@ -55,7 +55,7 @@ class Form extends Component {
             value={this.state.number}
           />
           <BtnSubmit type="submit" className="btnSubmit">
-            Submit
+            Add contact
           </BtnSubmit>
         </WraperForm>
       </form>
